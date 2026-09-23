@@ -1,0 +1,18 @@
+{
+  "name": "backend-graphql-usuarios",
+  "version": "1.0.0",
+  "description": "API GraphQL CRUD de usuarios conectada a MySQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.3",
+    "express": "^5.2.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.10.3",
+    "mysql2": "^3.24.4"
+  }
+}

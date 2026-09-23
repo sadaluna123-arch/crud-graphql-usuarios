@@ -1,0 +1,50 @@
+.contenedor { width: min(1000px, 92%); margin: 36px auto; }
+h1 { text-align: center; margin-bottom: 4px; color: #17365d; }
+.subtitulo { text-align: center; color: #64748b; margin-top: 0; margin-bottom: 24px; }
+
+.tarjeta { background: white; padding: 18px; border-radius: 10px; margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
+.tarjeta h2 { margin: 0 0 12px; font-size: 1.2rem; color: #17365d; }
+
+form { display: grid; grid-template-columns: 1fr 1fr 120px auto; gap: 10px; align-items: end; }
+form h2 { grid-column: 1 / -1; }
+label { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: #475569; }
+.botones { display: flex; gap: 6px; }
+
+input, button { padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; }
+input:focus { outline: 2px solid #1d4ed8; outline-offset: 1px; }
+button { cursor: pointer; background: #1d4ed8; color: white; border: 0; margin: 2px; }
+button:hover { background: #1e40af; }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+button.secundario { background: #64748b; }
+button.peligro { background: #dc2626; }
+button.peligro:hover { background: #b91c1c; }
+
+.tabla-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; background: white; }
+th, td { padding: 11px; border-bottom: 1px solid #e5e7eb; text-align: left; }
+th { background: #17365d; color: white; }
+tr.seleccionado td { background: #eff6ff; }
+.acciones { white-space: nowrap; }
+
+.estado { text-align: center; color: #475569; padding: 16px; }
+.estado-error { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; border-radius: 10px; }
+.estado-error p { margin: 6px 0; }
+
+.mensaje { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;
+  border-radius: 8px; margin-bottom: 16px; }
+.mensaje-exito { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+.mensaje-error { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+.mensaje .cerrar { background: transparent; color: inherit; font-size: 1.2rem; padding: 0 6px; margin: 0; }
+
+/* RF8: diseño adaptable */
+@media (max-width: 700px) {
+  form { grid-template-columns: 1fr; }
+  table { font-size: 14px; }
+  thead { display: none; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  tr { border-bottom: 2px solid #e5e7eb; padding: 6px 0; }
+  td { border: 0; padding: 6px 11px; }
+  td::before { content: attr(data-label) ": "; font-weight: bold; color: #17365d; }
+  td.acciones::before { content: ""; }
+}
